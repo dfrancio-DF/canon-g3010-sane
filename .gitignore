@@ -1,0 +1,6 @@
+/dist/
+/pkgroot/
+*.so
+*.so.*
+__pycache__/
+*.py[cod]

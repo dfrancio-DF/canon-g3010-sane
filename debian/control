@@ -1,0 +1,11 @@
+Package: sane-backend-canon-chmp
+Version: 0.1.4
+Section: graphics
+Priority: optional
+Architecture: amd64
+Depends: libc6 (>= 2.34), libsane1, libjpeg-turbo8, python3
+Maintainer: Canon CHMP SANE contributors <canon-chmp-sane@users.noreply.github.com>
+Description: Experimental SANE backend for Canon CHMP network scanners
+ Bridges the reverse-engineered Canon CHMP client for PIXMA G3010-series
+ scanners into SANE frontends such as Simple Scan. Experimental, single-page
+ flatbed scans only.
