@@ -1,0 +1,9 @@
+{
+  OPERATION Cancel-Job
+  GROUP operation-attributes-tag
+  ATTR charset attributes-charset utf-8
+  ATTR naturalLanguage attributes-natural-language en
+  ATTR uri printer-uri $uri
+  ATTR integer job-id 20
+  STATUS successful-ok
+}

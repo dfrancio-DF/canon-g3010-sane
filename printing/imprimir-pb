@@ -1,0 +1,15 @@
+#!/bin/bash
+# Imprime um PDF em preto e branco convertendo o conteudo para cinza
+# e enviando em RGB (o modo B/N nativo do PPG gera pagina em branco/invertida nesta Canon).
+set -euo pipefail
+if [ $# -lt 1 ]; then
+  echo "Uso: imprimir-pb arquivo.pdf [opcoes-do-lp...]" >&2
+  exit 1
+fi
+entrada="$1"; shift
+saida=$(mktemp --suffix=.pdf)
+trap 'rm -f "$saida"' EXIT
+gs -q -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+   -dProcessColorModel=/DeviceGray -sColorConversionStrategy=Gray \
+   -sOutputFile="$saida" "$entrada"
+lp -d Canon-G3111 -o PwgRasterDocumentType=Rgb_8 -o media=A4 "$@" "$saida"

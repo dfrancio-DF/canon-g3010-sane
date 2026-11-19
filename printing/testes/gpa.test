@@ -1,0 +1,9 @@
+{
+  OPERATION Get-Printer-Attributes
+  GROUP operation-attributes-tag
+  ATTR charset attributes-charset utf-8
+  ATTR naturalLanguage attributes-natural-language en
+  ATTR uri printer-uri $uri
+  ATTR keyword requested-attributes printer-state,printer-is-accepting-jobs,printer-state-reasons,print-color-mode-supported,document-format-supported
+  STATUS successful-ok
+}

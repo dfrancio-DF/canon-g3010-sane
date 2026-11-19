@@ -54,3 +54,21 @@ img2pdf --dpi 300 "$base.jpg" -o "$base.pdf"
 ```
 
 Replace `192.168.1.50` with the printer's current IP. Omit `--gray` for color.
+
+## Black-and-white printing
+
+The same G3111/G3010 device has a broken PWG Raster grayscale mode in the
+generic CUPS PPD: `Black_1` yields a blank page and `SGray_8` yields an
+inverted/all-black page. The printer itself supports `print-color-mode=monochrome`,
+so the fix is to set that IPP attribute as the default while keeping the raster
+in `Rgb_8` — no PDF pre-conversion needed:
+
+```sh
+lpadmin -p Canon-G3111 -o print-color-mode-default=monochrome \
+                       -o PwgRasterDocumentType-default=Rgb_8
+cp printing/lpoptions ~/.cups/lpoptions
+```
+
+See [PRINTING.md](PRINTING.md) for the full diagnosis, IPP attribute dumps,
+`ipptool` test files and upstream bug references. (That document is in
+Portuguese.)

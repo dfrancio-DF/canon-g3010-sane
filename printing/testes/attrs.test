@@ -1,0 +1,9 @@
+{
+  OPERATION Get-Printer-Attributes
+  GROUP operation-attributes-tag
+  ATTR charset attributes-charset utf-8
+  ATTR naturalLanguage attributes-natural-language en
+  ATTR uri printer-uri $uri
+  ATTR keyword requested-attributes printer-info,printer-make-and-model,printer-state,printer-is-accepting-jobs,printer-state-reasons,document-format-supported,pwg-raster-document-type-supported,print-color-mode-supported,urf-supported,output-mode-supported,media-supported
+  STATUS successful-ok
+}
