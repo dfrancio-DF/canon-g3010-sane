@@ -254,3 +254,10 @@ ipptool -tv ipp://192.168.1.124:631/ipp/print printing/testes/gpa.test
 ipptool -tv ipp://192.168.1.124:631/ipp/print printing/testes/attrs.test
 ipptool -tv ipp://192.168.1.124:631/ipp/print printing/testes/getjobs.test
 ```
+
+---
+
+## Publicação
+
+- Gist público: https://gist.github.com/dfrancio-DF/ace60e08186e39169dddd6423867f194
+- Relatório upstream: https://github.com/OpenPrinting/cups-filters/issues/186#issuecomment-7017506975
