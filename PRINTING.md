@@ -170,6 +170,33 @@ PwgRasterDocumentType=Rgb_8
 
 ---
 
+## Imprimindo em cor
+
+O padrão da fila principal é P&B. Para imprimir em cor, use uma segunda fila
+apontando para o mesmo dispositivo, com `print-color-mode-default=color`:
+
+```bash
+lpadmin -p Canon-G3111-Cor -E -v ipp://192.168.1.124:631/ipp/print \
+        -P /tmp/g3111.ppd
+lpadmin -p Canon-G3111-Cor -o print-color-mode-default=color \
+                           -o PwgRasterDocumentType-default=Rgb_8 \
+                           -o media-default=A4
+```
+
+Aí é só escolher **`Canon-G3111-Cor`** no diálogo de impressão, ou usar:
+
+```bash
+lp -d Canon-G3111-Cor documento.pdf
+```
+
+Alternativa sem criar outra fila, apenas para um trabalho específico:
+
+```bash
+lp -d Canon-G3111 -o print-color-mode=color documento.pdf
+```
+
+---
+
 ## Validação
 
 1. Folha de teste com o texto `TESTE MONOCHROME`, enviada com
