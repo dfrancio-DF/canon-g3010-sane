@@ -206,6 +206,9 @@ lp -d Canon-G3111 -o print-color-mode=color documento.pdf
    (`CPF_RG_DiegoFrancio_DIGITAL.pdf`, job `Canon-G3111-191`) enviado **sem
    nenhuma opção**, apenas com os padrões acima → **imprimiu corretamente em
    preto e branco**, com foto e texto preservados. ✅
+3. Teste colorido A4 com seis retângulos (vermelho, verde, azul, amarelo,
+   roxo, ciano) enviado pela fila `Canon-G3111-Cor` (job
+   `Canon-G3111-Cor-192`) → **as seis cores saíram corretas**. ✅
 
 ---
 
